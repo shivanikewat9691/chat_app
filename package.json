@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "Your project description",
   "main": "index.js",
+  "decimalNumber": 123.45,
+
   "scripts": {
     "start": "node index.js"
   },
