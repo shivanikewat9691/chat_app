@@ -1,21 +1,26 @@
 {
   "name": "chat-app",
+  "private": true,
+  "dependencies": {
+    "@rails/actioncable": "^6.0.0",
+    "@rails/activestorage": "^6.0.0",
+    "@rails/ujs": "^6.0.0",
+    "@rails/webpacker": "5.4.4",
+    "turbolinks": "^5.2.0",
+    "webpack": "^4.46.0",
+    "webpack-cli": "^3.3.12"
+  },
   "version": "1.0.0",
-  "description": "Your project description",
+  "devDependencies": {
+    "webpack-dev-server": "^3"
+  },
   "main": "index.js",
-  "decimalNumber": 123.45,
-
   "scripts": {
     "start": "node index.js"
   },
   "engines": {
     "node": ">=10.0.0"
-  },
-  "dependencies": {
-    // Your project dependencies
-  },
-  "devDependencies": {
-    // Your development dependencies
   }
 }
+
 
