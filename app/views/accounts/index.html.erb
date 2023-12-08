@@ -1,0 +1,22 @@
+<h1>Accounts List</h1>
+  <% @accounts.each do |account| %>
+  <p>
+    <strong>first_name:</strong>
+    <%= account.first_name %>
+  </p>
+
+  <p>
+    <strong>last_name:</strong>
+    <%= account.last_name %>
+  </p>
+
+  <p>
+    <strong>city:</strong>
+    <%= account.city %>
+  </p>
+
+  <p>
+    <strong>password:</strong>
+    <%= account.password %>
+  </p>
+  <% end %>
