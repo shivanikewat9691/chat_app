@@ -15,3 +15,10 @@
     "webpack-dev-server": "^3"
   }
 }
+"devDependencies": {
+  "@babel/plugin-proposal-private-methods": "^version_number"
+}
+{
+  "presets": ["@babel/preset-env"],
+  "plugins": ["@babel/plugin-proposal-private-methods"]
+}
