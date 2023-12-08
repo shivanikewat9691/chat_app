@@ -1,0 +1,18 @@
+databases:
+  - name: archu
+    databaseName: archu
+    user: archu_user
+
+services:
+  - type: web
+    name: archu
+    runtime: ruby
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: archu
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
