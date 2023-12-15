@@ -3,12 +3,12 @@ class UsersController < ApplicationController
   before_action :set_user, only:[:show,:edit,:update,:destroy ]
 
   def index
-    @users = User.all
+    users = User.all
     # render json:  users, status: :ok 
   end
 
   def new
-    @user = User.new
+    user = User.new
     # render json:  @user, status: :ok 
   end
 
@@ -29,10 +29,20 @@ class UsersController < ApplicationController
     end
   end
 
+  # def create
+  #   user = User.new(user_params)
+  #   if user.save
+  #     token = JsonWebToken.encode(user_id: user.id)
+  #     render json: { token: token }, status: :created
+  #   else
+  #     render json: user.errors, status: :unprocessable_entity
+  #   end
+  # end
+
   def verify_pin
     @user = User.find_by(email: params[:email], pin: params[:pin])
 
-    if user.present?
+    if @user.present?
       @user.update(pin: Time.zone.now) 
       render json: { message: 'PIN verification successful' }, status: :ok
     else  
@@ -42,11 +52,11 @@ class UsersController < ApplicationController
 
   def login
     # byebug
-    @user = User.where(email: params[:email], password: params[:password], token: params[:token])
+    user = User.where(email: params[:email], password: params[:password], token: params[:token])
 
     # if valid_password?(user.password)
-    if @user
-      render json: { message: 'Login successful', user: @user}, status: :ok
+    if user
+      render json: { message: 'Login successful', user: user}, status: :ok
       # render json:  user, status: :ok
     else
       render json: { error: 'Invalid email or password' }, status: :unprocessable_entity

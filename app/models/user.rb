@@ -21,4 +21,5 @@ class User < ApplicationRecord
   # def user_mobile_number
   #   self.account.full_phone_number
   # end
+
 end
